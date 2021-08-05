@@ -2,12 +2,13 @@
 // versions:
 // 	protoc-gen-go v1.26.0
 // 	protoc        v3.13.0
-// source: github.com/chan/protos/src/blog/blog.proto
+// source: blog/blog.proto
 
 package blog
 
 import (
 	context "context"
+	_ "github.com/jergoo/go-grpc-example/proto/google/api"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -36,7 +37,7 @@ type SearchBlogRequest struct {
 func (x *SearchBlogRequest) Reset() {
 	*x = SearchBlogRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_chan_protos_src_blog_blog_proto_msgTypes[0]
+		mi := &file_blog_blog_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -49,7 +50,7 @@ func (x *SearchBlogRequest) String() string {
 func (*SearchBlogRequest) ProtoMessage() {}
 
 func (x *SearchBlogRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_chan_protos_src_blog_blog_proto_msgTypes[0]
+	mi := &file_blog_blog_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,7 +63,7 @@ func (x *SearchBlogRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchBlogRequest.ProtoReflect.Descriptor instead.
 func (*SearchBlogRequest) Descriptor() ([]byte, []int) {
-	return file_github_com_chan_protos_src_blog_blog_proto_rawDescGZIP(), []int{0}
+	return file_blog_blog_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *SearchBlogRequest) GetId() string {
@@ -84,7 +85,7 @@ type SearchBlogResponse struct {
 func (x *SearchBlogResponse) Reset() {
 	*x = SearchBlogResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_github_com_chan_protos_src_blog_blog_proto_msgTypes[1]
+		mi := &file_blog_blog_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -97,7 +98,7 @@ func (x *SearchBlogResponse) String() string {
 func (*SearchBlogResponse) ProtoMessage() {}
 
 func (x *SearchBlogResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_github_com_chan_protos_src_blog_blog_proto_msgTypes[1]
+	mi := &file_blog_blog_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -110,7 +111,7 @@ func (x *SearchBlogResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SearchBlogResponse.ProtoReflect.Descriptor instead.
 func (*SearchBlogResponse) Descriptor() ([]byte, []int) {
-	return file_github_com_chan_protos_src_blog_blog_proto_rawDescGZIP(), []int{1}
+	return file_blog_blog_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *SearchBlogResponse) GetMessage() string {
@@ -120,45 +121,48 @@ func (x *SearchBlogResponse) GetMessage() string {
 	return ""
 }
 
-var File_github_com_chan_protos_src_blog_blog_proto protoreflect.FileDescriptor
+var File_blog_blog_proto protoreflect.FileDescriptor
 
-var file_github_com_chan_protos_src_blog_blog_proto_rawDesc = []byte{
-	0x0a, 0x2a, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x63, 0x68, 0x61,
-	0x6e, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x73, 0x72, 0x63, 0x2f, 0x62, 0x6c, 0x6f,
-	0x67, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x04, 0x62, 0x6c,
-	0x6f, 0x67, 0x22, 0x23, 0x0a, 0x11, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x42, 0x6c, 0x6f, 0x67,
-	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x22, 0x2e, 0x0a, 0x12, 0x53, 0x65, 0x61, 0x72, 0x63,
-	0x68, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a,
-	0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
-	0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0x49, 0x0a, 0x04, 0x42, 0x6c, 0x6f, 0x67, 0x12,
-	0x41, 0x0a, 0x0a, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x42, 0x6c, 0x6f, 0x67, 0x12, 0x17, 0x2e,
-	0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x42, 0x6c, 0x6f, 0x67, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x53, 0x65,
+var file_blog_blog_proto_rawDesc = []byte{
+	0x0a, 0x0f, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x12, 0x04, 0x62, 0x6c, 0x6f, 0x67, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
+	0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x23, 0x0a, 0x11, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x42,
+	0x6c, 0x6f, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x22, 0x2e, 0x0a, 0x12, 0x53, 0x65,
 	0x61, 0x72, 0x63, 0x68, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x42, 0x23, 0x5a, 0x21, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
-	0x2f, 0x63, 0x68, 0x61, 0x6e, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f, 0x6f,
-	0x75, 0x74, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x32, 0x67, 0x0a, 0x04, 0x42, 0x6c,
+	0x6f, 0x67, 0x12, 0x5f, 0x0a, 0x0a, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x42, 0x6c, 0x6f, 0x67,
+	0x12, 0x17, 0x2e, 0x62, 0x6c, 0x6f, 0x67, 0x2e, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x42, 0x6c,
+	0x6f, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x62, 0x6c, 0x6f, 0x67,
+	0x2e, 0x53, 0x65, 0x61, 0x72, 0x63, 0x68, 0x42, 0x6c, 0x6f, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x1e, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x18, 0x22, 0x13, 0x2f, 0x76, 0x31,
+	0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x2f, 0x73, 0x65, 0x61, 0x72, 0x63, 0x68, 0x42, 0x6c, 0x6f, 0x67,
+	0x3a, 0x01, 0x2a, 0x42, 0x2a, 0x5a, 0x28, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
+	0x6d, 0x2f, 0x43, 0x48, 0x45, 0x4e, 0x5a, 0x49, 0x42, 0x49, 0x4e, 0x34, 0x37, 0x2f, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x67, 0x6f, 0x6f, 0x75, 0x74, 0x2f, 0x62, 0x6c, 0x6f, 0x67, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_github_com_chan_protos_src_blog_blog_proto_rawDescOnce sync.Once
-	file_github_com_chan_protos_src_blog_blog_proto_rawDescData = file_github_com_chan_protos_src_blog_blog_proto_rawDesc
+	file_blog_blog_proto_rawDescOnce sync.Once
+	file_blog_blog_proto_rawDescData = file_blog_blog_proto_rawDesc
 )
 
-func file_github_com_chan_protos_src_blog_blog_proto_rawDescGZIP() []byte {
-	file_github_com_chan_protos_src_blog_blog_proto_rawDescOnce.Do(func() {
-		file_github_com_chan_protos_src_blog_blog_proto_rawDescData = protoimpl.X.CompressGZIP(file_github_com_chan_protos_src_blog_blog_proto_rawDescData)
+func file_blog_blog_proto_rawDescGZIP() []byte {
+	file_blog_blog_proto_rawDescOnce.Do(func() {
+		file_blog_blog_proto_rawDescData = protoimpl.X.CompressGZIP(file_blog_blog_proto_rawDescData)
 	})
-	return file_github_com_chan_protos_src_blog_blog_proto_rawDescData
+	return file_blog_blog_proto_rawDescData
 }
 
-var file_github_com_chan_protos_src_blog_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_github_com_chan_protos_src_blog_blog_proto_goTypes = []interface{}{
+var file_blog_blog_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_blog_blog_proto_goTypes = []interface{}{
 	(*SearchBlogRequest)(nil),  // 0: blog.SearchBlogRequest
 	(*SearchBlogResponse)(nil), // 1: blog.SearchBlogResponse
 }
-var file_github_com_chan_protos_src_blog_blog_proto_depIdxs = []int32{
+var file_blog_blog_proto_depIdxs = []int32{
 	0, // 0: blog.Blog.SearchBlog:input_type -> blog.SearchBlogRequest
 	1, // 1: blog.Blog.SearchBlog:output_type -> blog.SearchBlogResponse
 	1, // [1:2] is the sub-list for method output_type
@@ -168,13 +172,13 @@ var file_github_com_chan_protos_src_blog_blog_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_github_com_chan_protos_src_blog_blog_proto_init() }
-func file_github_com_chan_protos_src_blog_blog_proto_init() {
-	if File_github_com_chan_protos_src_blog_blog_proto != nil {
+func init() { file_blog_blog_proto_init() }
+func file_blog_blog_proto_init() {
+	if File_blog_blog_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_github_com_chan_protos_src_blog_blog_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_blog_blog_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SearchBlogRequest); i {
 			case 0:
 				return &v.state
@@ -186,7 +190,7 @@ func file_github_com_chan_protos_src_blog_blog_proto_init() {
 				return nil
 			}
 		}
-		file_github_com_chan_protos_src_blog_blog_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_blog_blog_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SearchBlogResponse); i {
 			case 0:
 				return &v.state
@@ -203,20 +207,20 @@ func file_github_com_chan_protos_src_blog_blog_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_github_com_chan_protos_src_blog_blog_proto_rawDesc,
+			RawDescriptor: file_blog_blog_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_github_com_chan_protos_src_blog_blog_proto_goTypes,
-		DependencyIndexes: file_github_com_chan_protos_src_blog_blog_proto_depIdxs,
-		MessageInfos:      file_github_com_chan_protos_src_blog_blog_proto_msgTypes,
+		GoTypes:           file_blog_blog_proto_goTypes,
+		DependencyIndexes: file_blog_blog_proto_depIdxs,
+		MessageInfos:      file_blog_blog_proto_msgTypes,
 	}.Build()
-	File_github_com_chan_protos_src_blog_blog_proto = out.File
-	file_github_com_chan_protos_src_blog_blog_proto_rawDesc = nil
-	file_github_com_chan_protos_src_blog_blog_proto_goTypes = nil
-	file_github_com_chan_protos_src_blog_blog_proto_depIdxs = nil
+	File_blog_blog_proto = out.File
+	file_blog_blog_proto_rawDesc = nil
+	file_blog_blog_proto_goTypes = nil
+	file_blog_blog_proto_depIdxs = nil
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -298,5 +302,5 @@ var _Blog_serviceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "github.com/chan/protos/src/blog/blog.proto",
+	Metadata: "blog/blog.proto",
 }

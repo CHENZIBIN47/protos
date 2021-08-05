@@ -1,13 +1,20 @@
 syntax = "proto3";
 
-option go_package = "github.com/chan/protos/goout/blog";
-
 package blog;
+
+option go_package = "github.com/CHENZIBIN47/protos/goout/blog";
+import "google/api/annotations.proto";
+
 
 // The greeting service definition.
 service Blog {
   // Sends a greeting
-  rpc SearchBlog (SearchBlogRequest) returns (SearchBlogResponse) {}
+  rpc SearchBlog (SearchBlogRequest) returns (SearchBlogResponse) {
+    option (google.api.http) = {
+      post: "/v1/blog/searchBlog"
+      body: "*"
+    };
+  }
 }
 
 // The request message containing the user's name.
