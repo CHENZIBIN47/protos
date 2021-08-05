@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package = "github.com/chan/protos/goout/blog";
+
+package blog;
+
+// The greeting service definition.
+service Blog {
+  // Sends a greeting
+  rpc SearchBlog (SearchBlogRequest) returns (SearchBlogResponse) {}
+}
+
+// The request message containing the user's name.
+message SearchBlogRequest {
+  string id = 1;
+}
+
+// The response message containing the greetings
+message SearchBlogResponse {
+  string message = 1;
+}
