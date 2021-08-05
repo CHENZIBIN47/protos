@@ -19,12 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4e1fd6f-5f2a-4d9a-8606-5780a3318819" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/google/api/annotations.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/google/api/http.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goout/blog/blog.pb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/blog/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog/blog.proto" afterDir="false" />
-    </list>
+    <list default="true" id="a4e1fd6f-5f2a-4d9a-8606-5780a3318819" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
