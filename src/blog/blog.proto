@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package blog;
 
-option go_package = "github.com/CHENZIBIN47/protos/goout/blog";
+option go_package = "./blog";
 import "google/api/annotations.proto";
 
 
