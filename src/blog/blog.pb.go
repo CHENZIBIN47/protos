@@ -8,7 +8,7 @@ package blog
 
 import (
 	context "context"
-	_ "github.com/jergoo/go-grpc-example/proto/google/api"
+	_ "github.com/CHENZIBIN47/protos/src/google/api"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
